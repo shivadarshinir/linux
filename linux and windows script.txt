@@ -1,0 +1,20 @@
+linux bootstrap script
+
+#!/bin/bash
+sudo su -
+yum update -y
+yum install httpd -y
+cd /var/www/html
+echo "WELCOME TO MY NEW WEB PAGE" >index.html
+service httpd start
+chkconfig httpd on
+
+
+
+windows powershell script
+
+<powershell>
+Install-WindowsFeature -name Web-Server -IncludeManagementTools
+New-Item -Path C:\inetpub\wwwroot\index.html -ItemType File -Value "Amazon Web Services"  -Force
+</powershell>
+
